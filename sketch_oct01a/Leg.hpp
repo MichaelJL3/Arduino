@@ -10,7 +10,7 @@ class Leg {
   ControlledServo foot;
 public:
   Leg(const short attachHip, const short attachKnee, const short attachFoot);
-  void move(const short n);
+  virtual void move(const short n) = 0;
 };
 
 #endif
