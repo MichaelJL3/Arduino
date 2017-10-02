@@ -14,6 +14,9 @@ const short S2 = 6;
 
 ControlledServo s1 = 0, s2 = 180;
 
+//test a quad leg
+//QuadLeg leg1(9, 8, 7, 0, 0, 0);
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
@@ -36,6 +39,9 @@ void loop() {
   } else if(decreaseBtn == HIGH) {
     pos = BACKWARD;
   }
+  
+  //determine how leg will move?? direction??
+  //leg1.move();
   
   s1.move(pos);
   s2.move(0-pos);
