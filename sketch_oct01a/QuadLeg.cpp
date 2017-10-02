@@ -1,6 +1,8 @@
 
 #include "QuadLeg.hpp"
 
+QuadLeg::QuadLeg(){}
+
 QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short attachFoot) 
     : Leg(attachHip, attachKnee, attachFoot) {
         hip.position(DEFHIPPOS);
