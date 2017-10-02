@@ -18,11 +18,19 @@ public:
     QuadLegController();
 };
 
-const short operator _L (const short n) {
+const short operator _FL (const short n) const {
+    return n;
+}
+
+const short operator _FR (const short n) const {
     return 0-n;
 }
 
-const short operator _R (const short n) const {
+const short operator _BL (const short n) const {
+    return 180-n;
+}
+
+const short operator _BR (const short n) const {
     return n;
 }
 
