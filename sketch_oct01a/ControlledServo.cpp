@@ -46,3 +46,17 @@ void ControlledServo::position(const short n) {
   pos = (pos > MAXPOS ? MAXPOS : pos);
   write(pos);
 }
+
+/*
+  write
+  moves to the position but does so with a specified increment
+*/
+void ControlledServo::write(const short n, const short incr) {
+  short end = pos + n;
+  end = (end < MINPOS ? MINPOS : end);
+  end = (end > MAXPOS ? MAXPOS : end);
+
+  for(; pos < end; pos+=incr) {
+    write(pos);
+  }
+}

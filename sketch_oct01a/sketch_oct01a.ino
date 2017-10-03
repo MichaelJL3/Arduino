@@ -39,7 +39,7 @@ void loop() {
   }
   
   //determine how leg will move?? direction??
-  leg1.move(pos);
+  leg1.forward();
 
   delay(DELAY);
 }

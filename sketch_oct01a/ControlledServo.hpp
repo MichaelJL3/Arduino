@@ -27,6 +27,7 @@ public:
   ControlledServo(const short p);
   void move(const short n);
   void position(const short n);
+  void write(const short n, const short incr);
 };
 
 #endif

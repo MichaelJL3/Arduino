@@ -28,7 +28,8 @@ public:
   void attachFoot(const short foot);
 
   //must be overwritten (Abstract function)
-  virtual void move(const short n) = 0;
+  virtual void move(const short x, const short y, const short z) = 0;
+  virtual void position(const short x, const short y, const short z) = 0;
 };
 
 #endif

@@ -7,14 +7,14 @@
 #ifndef QuadLegController_HPP
 #define QuadLegController_HPP
 
-#include "QuadLeg.hpp"
+#include "AraneaeLeg.hpp"
 
 /*
   QuadLegController
   creates and encapsulates the movements and controls of the legs
 */
 class QuadLegController {
-    QuadLeg *legs;
+    AraneaeLeg *legs;
 public:
     //default and constant values
     static const short FRONTLEFT = 0;
@@ -27,17 +27,6 @@ public:
 
     QuadLegController(const short fl[3], const short fr[3], const short bl[3], const short br[3]);
     ~QuadLegController();
-
-    void forward();
-    void backward();
-    void down();
-    void up();
-    void left();
-    void right();
-    void climb();
-    void turn(const short degrees);
-    void diagonalForward(const short degrees);
-    void diagonalBackward(const short degrees);
 };
 
 /*
