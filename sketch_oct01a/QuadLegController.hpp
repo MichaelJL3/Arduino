@@ -27,6 +27,17 @@ public:
 
     QuadLegController(const short fl[3], const short fr[3], const short bl[3], const short br[3]);
     ~QuadLegController();
+
+    void forward();
+    void backward();
+    void down();
+    void up();
+    void left();
+    void right();
+    void climb();
+    void turn(const short degrees);
+    void diagonalForward(const short degrees);
+    void diagonalBackward(const short degrees);
 };
 
 /*

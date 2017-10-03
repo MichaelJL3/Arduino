@@ -14,7 +14,7 @@ const short S1 = 7;
 const short S2 = 6;
 const short S3 = 5;
 
-QuadLeg leg1;
+AraneaeLeg leg1;
 
 void setup() {
   // put your setup code here, to run once:
@@ -23,7 +23,7 @@ void setup() {
   pinMode(UP, INPUT);
   pinMode(DN, INPUT);
 
-  leg1 = QuadLeg(S1, S2, S3);
+  leg1 = AraneaeLeg(S1, S2, S3, 20, 45, 180);
 }
 
 void loop() {

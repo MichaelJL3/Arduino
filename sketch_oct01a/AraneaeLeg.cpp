@@ -1,22 +1,22 @@
 
 /*
-    QuadLeg.cpp
-    implementation of the QuadLeg class in QuadLeg.hpp
+    AraneaeLeg.cpp
+    implementation of the AraneaeLeg class in AraneaeLeg.hpp
 */
 
-#include "QuadLeg.hpp"
+#include "AraneaeLeg.hpp"
 
 /*
     constructor
     default
 */
-QuadLeg::QuadLeg() {}
+AraneaeLeg::AraneaeLeg() {}
 
 /*
     constructor
-    attaches the leg servos and positions them to the quadleg default design
+    attaches the leg servos and positions them to the Araneaeleg default design
 */
-QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short attachFoot) 
+AraneaeLeg::AraneaeLeg(const short attachHip, const short attachKnee, const short attachFoot) 
     : Leg(attachHip, attachKnee, attachFoot) {
         _hip.position(DEFHIPPOS);
         _knee.position(DEFKNEEPOS);
@@ -27,7 +27,7 @@ QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short atta
     constructor
     attaches the leg servos and positions them relative to the variables specified
 */
-QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short attachFoot, 
+AraneaeLeg::AraneaeLeg(const short attachHip, const short attachKnee, const short attachFoot, 
     const short hipPos, const short kneePos, const short footPos) 
     : Leg(attachHip, attachKnee, attachFoot) {
         _hip.position(hipPos);
@@ -39,7 +39,7 @@ QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short atta
     move
     [yet to be defined]
 */
-void QuadLeg::move(const short n) {
+void AraneaeLeg::move(const short n) {
   _hip.move(n);
   _knee.move(n);
   _foot.move(n);
