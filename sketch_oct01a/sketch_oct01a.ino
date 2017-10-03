@@ -39,7 +39,10 @@ void loop() {
   }
   
   //determine how leg will move?? direction??
-  leg1.forward();
+  //test leg movement
+  leg1.extendLeg();
+  leg1.pullForward();
+  leg1.resetLeg();
 
   delay(DELAY);
 }

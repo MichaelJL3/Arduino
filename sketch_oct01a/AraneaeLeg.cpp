@@ -21,6 +21,9 @@ AraneaeLeg::AraneaeLeg(const short attachHip, const short attachKnee, const shor
         _hip.position(DEFHIPPOS);
         _knee.position(DEFKNEEPOS);
         _foot.position(DEFFOOTPOS);
+
+        _m1 = (_reversed ? -25 : 25);
+        _m2 = (_reversed ? -5 : 5);
     }
 
 /*
@@ -54,26 +57,33 @@ void AraneaeLeg::position(const short x, const short y, const short z) {
 }
 
 /*
-    forward
-    walks forward
+    extendLeg
+    extends the leg out
 */
-void forward() {
-    const short m1 = (_reversed ? -25 : 25);
-    const short m2 = (_reversed ? -5 : 5);
-
-    //extend the leg
-    _foot.move(m1);
+void AraneaeLeg::extendLeg() {
+    _foot.move(_m1);
     _hip.move(ControlledServo::MAXPOS);
-    _knee.move(negative(m1));
+    _knee.move(negative(_m1));
+}
 
-    //pull weight forward
+/*
+    pullForward
+    pulls weight forward to advance position
+*/
+void AraneaeLeg::pullForward() {
     _foot.move(negative(ControlledServo::MAXPOS));
-    _knee.move(m1);
+    _knee.move(_m1);
+}
 
-    //reposition leg to default position
-    _foot.move(m2);
-    _hip.move(negative(ControlledServo::MAXPOS));
-    _foot.move(negative(m2));
+/*
+    resetLeg
+    resets the leg back to its default position
+    [change _m2 to something more default]
+*/
+void AraneaeLeg::resetLeg() {
+    _foot.move(_m2);
+    _hip.position(negative(DEFHIPPOS));
+    _foot.position(negative(DEFFOOTPOS));
 }
 
 /*

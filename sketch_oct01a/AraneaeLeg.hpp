@@ -22,6 +22,8 @@ class AraneaeLeg : public Leg {
     const static short DEFFOOTPOS = 0;
 
     bool _reversed;
+    short _m1;
+    short _m2;
 public:
     AraneaeLeg();
     AraneaeLeg(const short attachHip, const short attachKnee, const short attachFoot, const short offset =0);
@@ -31,9 +33,14 @@ public:
     //not complete
     void move(const short x, const short y, const short z);
     void position(const short x, const short y, const short z);
+    
+    //movements
+    void pullForward();
+    void extendLeg();
+    void resetLeg();
 
     //movements
-    void forward();
+    /*void forward();
     void backward();
     void down();
     void up();
@@ -42,7 +49,7 @@ public:
     void climb();
     void turn(const short degrees);
     void diagonalForward(const short degrees);
-    void diagonalBackward(const short degrees);
+    void diagonalBackward(const short degrees);*/
 };
 
 /*
