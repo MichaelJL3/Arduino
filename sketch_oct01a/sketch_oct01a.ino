@@ -1,5 +1,6 @@
 
 #include "ControlledServo.hpp"
+#include "QuadLeg.hpp"
 
 const short DELAY = 25;
 
@@ -11,11 +12,9 @@ const short DN = 3;
 
 const short S1 = 7;
 const short S2 = 6;
+const short S3 = 5;
 
-ControlledServo s1 = 0, s2 = 180;
-
-//test a quad leg
-//QuadLeg leg1(9, 8, 7, 0, 0, 0);
+QuadLeg leg1;
 
 void setup() {
   // put your setup code here, to run once:
@@ -23,9 +22,8 @@ void setup() {
   
   pinMode(UP, INPUT);
   pinMode(DN, INPUT);
-  
-  s1.attach(S1);
-  s2.attach(S2);
+
+  leg1 = QuadLeg(S1, S2, S3);
 }
 
 void loop() {
@@ -41,10 +39,7 @@ void loop() {
   }
   
   //determine how leg will move?? direction??
-  //leg1.move();
-  
-  s1.move(pos);
-  s2.move(0-pos);
+  leg1.move(pos);
 
   delay(DELAY);
 }

@@ -8,7 +8,6 @@
 #ifndef LEG_HPP
 #define LEG_HPP
 
-//the leg requries servos in order to function
 #include "ControlledServo.hpp"
 
 /*
@@ -17,6 +16,7 @@
   based on the type of leg
 */
 class Leg {
+protected:
   ControlledServo _hip;
   ControlledServo _knee;
   ControlledServo _foot;

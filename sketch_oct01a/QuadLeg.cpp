@@ -8,13 +8,19 @@
 
 /*
     constructor
+    default
+*/
+QuadLeg::QuadLeg() {}
+
+/*
+    constructor
     attaches the leg servos and positions them to the quadleg default design
 */
 QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short attachFoot) 
     : Leg(attachHip, attachKnee, attachFoot) {
-        hip.position(DEFHIPPOS);
-        knee.position(DEFKNEEPOS);
-        foot.position(DEFFOOTPOS);
+        _hip.position(DEFHIPPOS);
+        _knee.position(DEFKNEEPOS);
+        _foot.position(DEFFOOTPOS);
     }
 
 /*
@@ -22,11 +28,11 @@ QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short atta
     attaches the leg servos and positions them relative to the variables specified
 */
 QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short attachFoot, 
-    const short hipPos, const short kneePos, const short legPos) 
+    const short hipPos, const short kneePos, const short footPos) 
     : Leg(attachHip, attachKnee, attachFoot) {
-        hip.position(hipPos);
-        knee.position(kneePos);
-        foot.position(footPos);
+        _hip.position(hipPos);
+        _knee.position(kneePos);
+        _foot.position(footPos);
     }
 
 /*
@@ -34,5 +40,7 @@ QuadLeg::QuadLeg(const short attachHip, const short attachKnee, const short atta
     [yet to be defined]
 */
 void QuadLeg::move(const short n) {
-
+  _hip.move(n);
+  _knee.move(n);
+  _foot.move(n);
 }

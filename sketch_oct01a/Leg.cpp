@@ -6,7 +6,7 @@
 #include "Leg.hpp"
 
 //default constructor
-Leg::Leg(){}
+Leg::Leg() {}
 
 /*
   constructor
