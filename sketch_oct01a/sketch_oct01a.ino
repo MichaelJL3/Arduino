@@ -1,6 +1,6 @@
 
 #include "ControlledServo.hpp"
-#include "QuadLeg.hpp"
+#include "AraneaeLeg.hpp"
 
 const short DELAY = 25;
 
