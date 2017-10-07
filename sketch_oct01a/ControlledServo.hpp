@@ -25,9 +25,10 @@ public:
 
   ControlledServo();
   ControlledServo(const short p);
-  void move(const short n);
+  void move(const short n) const;
   void position(const short n);
-  void write(const short n, const short incr);
+  void write(const short n, const short incr = 10);
+  const short getPosition() const;
 };
 
 #endif

@@ -32,7 +32,7 @@ ControlledServo::ControlledServo(const short p) {
   move
   increases the servos position by the specified amount
 */
-void ControlledServo::move(const short n) {
+void ControlledServo::move(const short n) const {
   position(pos + n);
 }
 
@@ -51,7 +51,7 @@ void ControlledServo::position(const short n) {
   write
   moves to the position but does so with a specified increment
 */
-void ControlledServo::write(const short n, const short incr) {
+void ControlledServo::write(const short n, const short incr = 10) {
   short end = pos + n;
   end = (end < MINPOS ? MINPOS : end);
   end = (end > MAXPOS ? MAXPOS : end);
@@ -59,4 +59,8 @@ void ControlledServo::write(const short n, const short incr) {
   for(; pos < end; pos+=incr) {
     write(pos);
   }
+}
+
+const short ControlledServi::getPosition() const {
+  return pos;
 }

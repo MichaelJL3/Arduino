@@ -50,10 +50,22 @@ void AraneaeLeg::move(const short x, const short y, const short z) {
 /*
     position
     positions the leg based on the given coordinates for each piece
-    [yet to be implemented]
+    moves each piece in an incremental way to avoid mass movements of single pieces
 */
 void AraneaeLeg::position(const short x, const short y, const short z) {
+    const short diffFoot = abs(x - _foot.getPosition());
+    const short diffHip = abs(y - _hip.getPosition());
+    const short diffKnee = abs(z - _knee.getPosition());
 
+    const short maxDiff = max(max(diffFoot, diffHip), diffKnee);
+
+    const short end = ceil(maxDiff / (float)INCREMENTS);
+
+    for(short i = 0; i < end; ++i) {
+        _foot.move(INCREMENTS);
+        _hip.move(INCREMENTS);
+        _knee.move(INCREMENTS);
+    }
 }
 
 /*

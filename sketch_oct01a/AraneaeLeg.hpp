@@ -20,6 +20,8 @@ class AraneaeLeg : public Leg {
     const static short DEFHIPPOS = 0;
     const static short DEFKNEEPOS = 0;
     const static short DEFFOOTPOS = 0;
+    //default increments or position
+    const static short INCREMENTS = 10;
 
     bool _reversed;
     short _m1;
